@@ -4,7 +4,7 @@ Provide translation files for Hades StarTool
 
 ## Language
 
-[中文](https://) | [EN](https://) |
+[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/ZH.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
 
 ## How to use translation files
 
@@ -32,5 +32,9 @@ Modify text values in JSON format and upload localized translation files to this
 You can also send me the translation file
 
 Your localized translation file may be built-in in the next update of the application
+
+## Application Instructions
+
+[Hades-StarTool](https://github.com/lin-lin-miao/HST-More-Language/blob/main/HST/EN.md)
 
 ## MEOW~

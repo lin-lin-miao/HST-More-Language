@@ -4,7 +4,7 @@
 
 ## 语言
 
-[中文](https://) | [EN](https://) |
+[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/ZH.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
 
 ## 如何使用翻译文件
 
@@ -32,5 +32,9 @@
 也可以将翻译文件发送给我
 
 在应用下次更新时可能将你的本地化翻译文件内置
+
+## 应用使用说明
+
+[Hades-StarTool](https://github.com/lin-lin-miao/HST-More-Language/blob/main/HST/ZH.md)
 
 ## 喵~
