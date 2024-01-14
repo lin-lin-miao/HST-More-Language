@@ -4,7 +4,7 @@ Provide translation files for Hades StarTool
 
 ## Language
 
-[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/ZH.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
+[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
 
 ## How to use translation files
 
@@ -13,6 +13,10 @@ Add the required files to the /storage/emulated/0/HadesTool/Language directory
 or completely replace it with the Language folder of this project
 
 After adding, it can be automatically recognized or manually switched within the application
+
+switching position:
+更多>设置>语言:
+more>SET UP>LANGUAGE:
 
 directory structure:
 
