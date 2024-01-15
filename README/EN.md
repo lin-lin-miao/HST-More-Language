@@ -4,7 +4,7 @@ Provide translation files for Hades StarTool
 
 ## Language
 
-[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
+[中文](README.md) | [EN](README/EN.md) |
 
 ## How to use translation files
 
@@ -39,6 +39,6 @@ Your localized translation file may be built-in in the next update of the applic
 
 ## Application Instructions
 
-[Hades-StarTool](https://github.com/lin-lin-miao/HST-More-Language/blob/main/HST/EN.md)
+[Hades-StarTool](HST/EN.md)
 
 ## MEOW~
