@@ -4,7 +4,7 @@
 
 ## 语言
 
-[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README.md) | [EN](tree/main/README/EN.md) |
+[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
 
 ## 如何使用翻译文件
 
