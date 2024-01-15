@@ -14,11 +14,11 @@ or completely replace it with the Language folder of this project
 
 After adding, it can be automatically recognized or manually switched within the application
 
-switching position:
+Switching position:
 更多>设置>语言:
-more>SET UP>LANGUAGE:
+MORE>SETTLING>LANGUAGE:
 
-directory structure:
+Directory structure:
 
 - /storage/emulated/0/HadesTool
   - resAccount
