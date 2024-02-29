@@ -25,8 +25,14 @@
     - zh.json
     - en.json
     - (其它翻译文件)
+  - Calculator
   - rubbish
 
+## 如何使用计算器插件
+
+将所需的文件添加进 /storage/emulated/0/HadesTool/Calculator 目录下
+
+使用第三方插件需自行辨认安全性，本程序仅提供支持环境
 
 ## 添加本地化
 

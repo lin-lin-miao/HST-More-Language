@@ -104,5 +104,8 @@
   "支付宝": "Alipay",
   "截图扫码": "Screenshot scanning",
   "本应用完全离线运行,未申请联网权限": "This application runs completely offline and has not applied for networking permission",
-  "获取更多": "MORE"
+  "获取更多": "MORE",
+  "设置背景": "SET BACKGROUND",
+  "更换或清除背景": "change or clear the background",
+  "设置深色背景": "SET DarkMode BACKGROUND"
 }
