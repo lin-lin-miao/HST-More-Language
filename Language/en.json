@@ -118,5 +118,6 @@
   "新建插件": "NewPlugin",
   "请输入文件名称": "Please enter the file name",
   "退出前是否保存": "Save before exiting",
-  "提示": "prompt"
+  "提示": "prompt",
+  "保存位置": "save path"
 }

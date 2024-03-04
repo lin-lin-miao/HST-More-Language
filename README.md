@@ -34,6 +34,8 @@
 
 使用第三方插件需自行辨认安全性，本程序仅提供支持环境
 
+[详细](https://github.com/lin-lin-miao/HST-More-Language/blob/main/Calculator/Calculator.md)
+
 ## 添加本地化
 
 以json格式修改文本值,将本地化的翻译文件上传至本项目.
