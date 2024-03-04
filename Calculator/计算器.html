@@ -4,7 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script type="text/javascript">
+</head>
+<body>
+<h1 id="title" align="center">计算器</h1>
+<table border="1px" cellspacing="2" align="center" bgcolor="lightgray" bordercolor="white">
+    <tr>
+        <td colspan="4">
+            <input type="text" id="numInput" style="text-align: right;"/>
+        </td>
+    </tr>
+    <tr align="center">
+        <td onclick="OnClick(this)">c</td>
+        <td onclick="OnClick(this)">/</td>
+        <td onclick="OnClick(this)">*</td>
+        <td onclick="OnClick(this)">-</td>
+    </tr>
+    <tr align="center">
+        <td onclick="OnClick(this)">7</td>
+        <td onclick="OnClick(this)">8</td>
+        <td onclick="OnClick(this)">9</td>
+        <td onclick="OnClick(this)" rowspan="2">+</td>
+    </tr>
+    <tr align="center">
+        <td onclick="OnClick(this)">4</td>
+        <td onclick="OnClick(this)">5</td>
+        <td onclick="OnClick(this)">6</td>
+    </tr>
+    <tr align="center">
+        <td onclick="OnClick(this)">1</td>
+        <td onclick="OnClick(this)">2</td>
+        <td onclick="OnClick(this)">3</td>
+        <td onclick="OnClick(this)" rowspan="2">=</td>
+    </tr>
+    <tr align="center">
+        <td onclick="OnClick(this)">0</td>
+        <td onclick="OnClick(this)" colspan="2">.</td>
+    </tr>
+</table>
+</body>
+<script type="text/javascript">
+            document.getElementById("title").innerHTML = prompt("js/:api=i18n/:mes=计算器");
 			var strs = "";
 			function OnClick(obj) {
 				var str = obj.innerText;
@@ -39,49 +78,9 @@
 					numInput.value += str;
 				}
 			}
-		</script>
-</head>
 
-<body>
-<h1 align="center">计算器</h1>
-<table border="1px" cellspacing="2" align="center" bgcolor="lightgray" bordercolor="white">
 
-    <tr>
-        <td colspan="4">
-            <input type="text" id="numInput" style="text-align: right;"/>
-        </td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">c</td>
-        <td onclick="OnClick(this)">/</td>
-        <td onclick="OnClick(this)">*</td>
-        <td onclick="OnClick(this)">-</td>
-    </tr>
-    <tr  align="center">
-        <td onclick="OnClick(this)">7</td>
-        <td onclick="OnClick(this)">8</td>
-        <td onclick="OnClick(this)">9</td>
-        <td onclick="OnClick(this)" rowspan="2">+</td>
-    </tr>
-    <tr  align="center">
-        <td onclick="OnClick(this)">4</td>
-        <td onclick="OnClick(this)">5</td>
-        <td onclick="OnClick(this)">6</td>
-    </tr>
-    <tr  align="center">
-        <td onclick="OnClick(this)">1</td>
-        <td onclick="OnClick(this)">2</td>
-        <td onclick="OnClick(this)">3</td>
-        <td onclick="OnClick(this)" rowspan="2">=</td>
-    </tr>
-    <tr  align="center">
-        <td onclick="OnClick(this)">0</td>
-        <td onclick="OnClick(this)" colspan="2">.</td>
-    </tr>
-
-</table>
-
-</body>
+</script>
 
 </html>
 

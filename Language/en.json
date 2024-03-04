@@ -27,7 +27,7 @@
   "请授权允许管理所有文件\n(外部目录为[目录])\n在弹出的页面选择允许管理所有文件": "Please authorize permission to manage all files\n(The external directory is [0])\nSelect Allow to manage all files on the pop-up page",
   "正在重启": "Restarting",
   "拜拜": "Goodbye",
-  "再按一次退出程序": "Press again to exit the program",
+  "再按一次退出": "Press again to exit",
   "呼起QQ失败": "Failed to call QQ",
   "发布地址:(数字越大越新)": "Releasing address:(larger number newer)",
   "密码": "password",
@@ -107,5 +107,16 @@
   "获取更多": "MORE",
   "设置背景": "SET BACKGROUND",
   "更换或清除背景": "change or clear the background",
-  "设置深色背景": "SET DarkMode BACKGROUND"
+  "设置深色背景": "SET DarkMode BACKGROUND",
+  "添加": "ADD",
+  "手动添加": "Manual",
+  "手动添加或从GitHub下载,长按项目可编辑": "Manually add or download from GitHub, long press the item to edit",
+  "保存": "save",
+  "编辑": "Edit",
+  "发送日志": "Send log",
+  "分享失败": "Sharing failed",
+  "新建插件": "NewPlugin",
+  "请输入文件名称": "Please enter the file name",
+  "退出前是否保存": "Save before exiting",
+  "提示": "prompt"
 }
