@@ -20,12 +20,12 @@
 
 默认无返回值
 
-反射类名为: App
+反射类名为: android
 
 调用示例
 
 ```javascript
-App.Toast(strs);
+android.Toast(strs);
 ```
 
 |函数名|结果|
@@ -39,6 +39,7 @@ permission 可设置的函数
 - setAppCachePath
 - setDatabaseEnabled
 - setJavaScriptCanOpenWindowsAutomatically
+- setAllowUniversalAccessFromFileURLs
 
 ### 使用Prompt()函数
 
@@ -63,3 +64,5 @@ api值为需要调用的函数名，
 |i18n|mes=String|String|使用app加载的翻译文件进行翻译|
 |name|null|String|返回插件名称|
 |version|null|String|返回app版本|
+|path|null|URI|插件所在目录|
+|open|mes=Url|boolean|需用户同意的直接打开Url,true为同意,false为失败|
