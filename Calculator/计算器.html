@@ -5,82 +5,88 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<h1 id="title" align="center">计算器</h1>
-<table border="1px" cellspacing="2" align="center" bgcolor="lightgray" bordercolor="white">
-    <tr>
-        <td colspan="4">
-            <input type="text" id="numInput" style="text-align: right;"/>
-        </td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">c</td>
-        <td onclick="OnClick(this)">/</td>
-        <td onclick="OnClick(this)">*</td>
-        <td onclick="OnClick(this)">-</td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">7</td>
-        <td onclick="OnClick(this)">8</td>
-        <td onclick="OnClick(this)">9</td>
-        <td onclick="OnClick(this)" rowspan="2">+</td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">4</td>
-        <td onclick="OnClick(this)">5</td>
-        <td onclick="OnClick(this)">6</td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">1</td>
-        <td onclick="OnClick(this)">2</td>
-        <td onclick="OnClick(this)">3</td>
-        <td onclick="OnClick(this)" rowspan="2">=</td>
-    </tr>
-    <tr align="center">
-        <td onclick="OnClick(this)">0</td>
-        <td onclick="OnClick(this)" colspan="2">.</td>
-    </tr>
-</table>
+    <h1 id="title" align="center">计算器</h1>
+    <table border="1px" cellspacing="2" align="center" bgcolor="lightgray" bordercolor="white">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="numInput" style="text-align: right;" />
+            </td>
+        </tr>
+        <tr align="center">
+            <td onclick="OnClick(this)">c</td>
+            <td onclick="OnClick(this)">/</td>
+            <td onclick="OnClick(this)">*</td>
+            <td onclick="OnClick(this)">-</td>
+        </tr>
+        <tr align="center">
+            <td onclick="OnClick(this)">7</td>
+            <td onclick="OnClick(this)">8</td>
+            <td onclick="OnClick(this)">9</td>
+            <td onclick="OnClick(this)" rowspan="2">+</td>
+        </tr>
+        <tr align="center">
+            <td onclick="OnClick(this)">4</td>
+            <td onclick="OnClick(this)">5</td>
+            <td onclick="OnClick(this)">6</td>
+        </tr>
+        <tr align="center">
+            <td onclick="OnClick(this)">1</td>
+            <td onclick="OnClick(this)">2</td>
+            <td onclick="OnClick(this)">3</td>
+            <td onclick="OnClick(this)" rowspan="2">=</td>
+        </tr>
+        <tr align="center">
+            <td onclick="OnClick(this)">0</td>
+            <td onclick="OnClick(this)" colspan="2">.</td>
+        </tr>
+    </table>
 </body>
 <script type="text/javascript">
-            document.getElementById("title").innerHTML = prompt("js/:api=i18n/:msg=计算器");
-			var strs = "";
-			function OnClick(obj) {
-				var str = obj.innerText;
-				var numInput = document.getElementById("numInput");
+    var onAndroid = false
+    try {
+        onAndroid = JSON.stringify(android) === '{}'
+    } catch (error) {
+        console.error(error);
+    }
+    if (onAndroid) document.getElementById("title").innerHTML = prompt("js/:api=i18n/:msg=计算器");
+    var strs = "";
+    function OnClick(obj) {
+        var str = obj.innerText;
+        var numInput = document.getElementById("numInput");
 
-				//如果是=,清空原有显示的内容，以免附加上去。执行eval();得到结果。
-				if(str=="="){
-					numInput.value="";
-					str=eval(strs);
-					strs = str+"";
-					android.Toast(strs);
-				}else{
-				//否则的话，继续将内容拼接到字符串后；
-					strs += str;
-				}
-				//如果点击C的话，将所有内容清空。
-				if(str=="c"){
-					numInput.value = "";
-					strs="";
-					str="";
-				}
-				//如果点击的是运算符的话，只显示运算符。
-				if(str=="+"||str=="-"||str=="*"||str=="/"){
-					numInput.value = str;
-				}else{
-					//如果前一次点击的是运算符：先将原有显示的内容清空，再将本次点击的显示到屏幕上；
-					//主要是为了避免出现: +23456 这样的情况。
-					if(isNaN(numInput.value)){
-						numInput.value="";
-					}
-					//如果一直为数字，继续拼接显示。
-					numInput.value += str;
-				}
-			}
+        //如果是=,清空原有显示的内容，以免附加上去。执行eval();得到结果。
+        if (str == "=") {
+            numInput.value = "";
+            str = eval(strs);
+            strs = str + "";
+            if (onAndroid) android.Toast(strs);
+        } else {
+            //否则的话，继续将内容拼接到字符串后；
+            strs += str;
+        }
+        //如果点击C的话，将所有内容清空。
+        if (str == "c") {
+            numInput.value = "";
+            strs = "";
+            str = "";
+        }
+        //如果点击的是运算符的话，只显示运算符。
+        if (str == "+" || str == "-" || str == "*" || str == "/") {
+            numInput.value = str;
+        } else {
+            //如果前一次点击的是运算符：先将原有显示的内容清空，再将本次点击的显示到屏幕上；
+            //主要是为了避免出现: +23456 这样的情况。
+            if (isNaN(numInput.value)) {
+                numInput.value = "";
+            }
+            //如果一直为数字，继续拼接显示。
+            numInput.value += str;
+        }
+    }
 
 
 </script>
 
 </html>
-

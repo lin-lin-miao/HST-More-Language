@@ -14,7 +14,7 @@
 
 ## api调用
 
-未完全实现，未来可能会发生变化，有其它需求可在Issues提出或与作者联系
+未完全实现，未来可能会发生变化，有其它需求可在[Issues](https://github.com/lin-lin-miao/HST-More-Language/issues)提出或与作者联系
 
 ### 使用反射机制
 

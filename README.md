@@ -25,7 +25,7 @@
     - zh.json
     - en.json
     - (其它翻译文件)
-  - Calculator
+  - Calculator(插件文件夹)
   - rubbish
 
 ## 如何使用计算器插件

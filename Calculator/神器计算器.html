@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>神器计算器</title>
+</head>
+
+<body style="background-color:hsl(0, 0%, 90%,0.7);">
+
+    <h2 id="title" align="center">🟡🟣🔴神器计算器🔵🟢🟤</h2>
+    <fieldset>
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td id="卖出 等级">卖出 等级</td>
+                    <td id="数量2">数量</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="s" value="9" /></td>
+                    <td>🟡黄<input type="number" id="s1" value="0" /></td>
+                    <td>🟣紫<input type="number" id="s2" value="0" /></td>
+                    <td>🔴红<input type="number" id="s3" value="0" /></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>🔵蓝<input type="number" id="s4" value="0" /></td>
+                    <td>🟢绿<input type="number" id="s5" value="0" /></td>
+                    <td>🟤棕<input type="number" id="s6" value="0" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <p> </p>
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td id="买入 等级">买入 等级</td>
+                    <td id="数量1">数量</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="b" value="9" /></td>
+                    <td>🟡黄<input type="number" id="b1" value="0" /></td>
+                    <td>🟣紫<input type="number" id="b2" value="0" /></td>
+                    <td>🔴红<input type="number" id="b3" value="0" /></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>🔵蓝<input type="number" id="b4" value="0" /></td>
+                    <td>🟢绿<input type="number" id="b5" value="0" /></td>
+                    <td>🟤棕<input type="number" id="b6" value="0" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <p> </p>
+    <table>
+        <tbody>
+            <tr>
+                <td id="卖出 加成%">卖出 加成%</td>
+                <td id="买入 加成%">买入 加成%</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="sm" value="0" /></td>
+                <td><input type="number" id="bm" value="0" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <p> </p>
+    <table>
+        <tbody>
+            <tr>
+                <td id="比例加权">比例加权</td>
+                <td id="比例(1:n)">比例(1:n)</td>
+                <td>|</td>
+                <td id="推荐数量">推荐数量</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="bl_a" value="0" /></td>
+                <td id="bl">0.0</td>
+                <td>|</td>
+                <td id="num">0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p></p>
+    <table>
+        <tbody>
+            <td><button id="c_b" type="button" onclick="c_s()">计算</button></td>
+            <td>
+                <fieldset>
+                    <div>
+                        <label id="按卖出研究值计算">按卖出研究值计算</label>
+                        <input type="checkbox" id="csm" name="csm" />
+                    </div>
+                    <div>
+                        <label id="按买入量计算">按买入量计算</label>
+                        <input type="checkbox" id="ob" name="ob" />
+                    </div>
+                </fieldset>
+            </td>
+        </tbody>
+    </table>
+
+
+    <br />
+    <label id="卖出信息">卖出信息</label>
+    <button id="s_eb" type="button" onclick="s_e()">编辑</button>
+    <p id="st">喵喵喵</p>
+    <br />
+    <label id="买入信息">买入信息</label>
+    <button id="b_eb" type="button" onclick="b_e()">编辑</button>
+    <p id="bt">喵喵喵</p>
+    <br />
+    <br />
+    <p id="数据列表">数据列表</p>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td id="等级">等级</td>
+                <td id="研究价值">研究价值</td>
+                <td id="分解价值">分解价值</td>
+                <td id="重量">重量</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td id="y1">150</td>
+                <td id="f1">100</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td id="y2">200</td>
+                <td id="f2">150</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td id="y3">500</td>
+                <td id="f3">400</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td id="y4">750</td>
+                <td id="f4">500</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td id="y5">1000</td>
+                <td id="f5">600</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td id="y6">1250</td>
+                <td id="f6">800</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td id="y7">1500</td>
+                <td id="f7">1000</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td id="y8">2000</td>
+                <td id="f8">1200</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td id="y9">3000</td>
+                <td id="f9">1400</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td id="y10">4000</td>
+                <td id="f10">1600</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td id="y11">5000</td>
+                <td id="f11">1800</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>0</td>
+                <td>0</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="https://userxinos.github.io/HadesSpace/redstar#Artifacts">
+        <label id="数据来源">数据来源</label>
+    </a>
+
+
+    <script type="text/javascript">
+        var onAndroid = false
+        try {
+            onAndroid = JSON.stringify(android) === '{}'
+        } catch (error) {
+            console.error(error);
+        }
+
+        var y_t = '研究价值'
+        var f_t = '分解价值'
+        var s_t_ = '卖出信息'
+        var b_t_ = '买入信息'
+        if (onAndroid) {
+            document.getElementById("title").innerHTML = '🟡🟣🔴' + prompt("js/:api=i18n/:msg=神器计算器") + '🔵🟢🟤';
+            document.getElementById("数据来源").innerHTML = prompt("js/:api=i18n/:msg=数据来源");
+            document.getElementById("数据列表").innerHTML = prompt("js/:api=i18n/:msg=数据列表");
+            s_t_ = prompt("js/:api=i18n/:msg=卖出信息");
+            b_t_ = prompt("js/:api=i18n/:msg=买入信息");
+            document.getElementById("卖出信息").innerHTML = s_t_;
+            document.getElementById("买入信息").innerHTML = b_t_;
+            document.getElementById("按买入量计算").innerHTML = prompt("js/:api=i18n/:msg=按买入量计算");
+            document.getElementById("按卖出研究值计算").innerHTML = prompt("js/:api=i18n/:msg=按卖出研究值计算");
+            document.getElementById("比例加权").innerHTML = prompt("js/:api=i18n/:msg=比例加权");
+            document.getElementById("比例(1:n)").innerHTML = prompt("js/:api=i18n/:msg=比例(1:n)");
+            document.getElementById("推荐数量").innerHTML = prompt("js/:api=i18n/:msg=推荐数量");
+            document.getElementById("卖出 加成%").innerHTML = prompt("js/:api=i18n/:msg=卖出 加成%");
+            document.getElementById("买入 加成%").innerHTML = prompt("js/:api=i18n/:msg=买入 加成%");
+            document.getElementById("买入 等级").innerHTML = prompt("js/:api=i18n/:msg=买入 等级");
+            document.getElementById("数量1").innerHTML = prompt("js/:api=i18n/:msg=数量");
+            document.getElementById("数量2").innerHTML = prompt("js/:api=i18n/:msg=数量");
+            document.getElementById("卖出 等级").innerHTML = prompt("js/:api=i18n/:msg=卖出 等级");
+
+            document.getElementById("重量").innerHTML = prompt("js/:api=i18n/:msg=重量");
+            document.getElementById("分解价值").innerHTML = prompt("js/:api=i18n/:msg=分解价值");
+            document.getElementById("研究价值").innerHTML = prompt("js/:api=i18n/:msg=研究价值");
+            document.getElementById("等级").innerHTML = prompt("js/:api=i18n/:msg=等级");
+
+            document.getElementById("s_eb").innerHTML = prompt("js/:api=i18n/:msg=编辑");
+            document.getElementById("b_eb").innerHTML = prompt("js/:api=i18n/:msg=编辑");
+            document.getElementById("c_b").innerHTML = prompt("js/:api=i18n/:msg=计算");
+
+            y_t = prompt("js/:api=i18n/:msg=研究价值");
+            f_t = prompt("js/:api=i18n/:msg=分解价值");
+        }
+
+
+        var s1, s2, s3, s4, s5, s6;
+        var b1, b2, b3, b4, b5, b6;
+        var s1_i, s2_i, s3_i, s4_i, s5_i, s6_i;
+        var b1_i, b2_i, b3_i, b4_i, b5_i, b6_i;
+        var num = 0;
+        var s_n = 0;
+        var b_n = 0;
+        var s_v = 0;
+        var b_v = 0;
+        var s_l = 0;
+        var b_l = 0;
+        {
+            s1_i = document.getElementById('s1');
+            s2_i = document.getElementById('s2');
+            s3_i = document.getElementById('s3');
+            s4_i = document.getElementById('s4');
+            s5_i = document.getElementById('s5');
+            s6_i = document.getElementById('s6');
+        }
+        {
+            b1_i = document.getElementById('b1');
+            b2_i = document.getElementById('b2');
+            b3_i = document.getElementById('b3');
+            b4_i = document.getElementById('b4');
+            b5_i = document.getElementById('b5');
+            b6_i = document.getElementById('b6');
+        }
+        {
+            s1_i.addEventListener('change', c_s);
+            s2_i.addEventListener('change', c_s);
+            s3_i.addEventListener('change', c_s);
+            s4_i.addEventListener('change', c_s);
+            s5_i.addEventListener('change', c_s);
+            s6_i.addEventListener('change', c_s);
+        }
+        {
+            b1_i.addEventListener('change', c_s);
+            b2_i.addEventListener('change', c_s);
+            b3_i.addEventListener('change', c_s);
+            b4_i.addEventListener('change', c_s);
+            b5_i.addEventListener('change', c_s);
+            b6_i.addEventListener('change', c_s);
+        }
+        {
+            document.getElementById('sm').addEventListener('change', c_s);
+            document.getElementById('bm').addEventListener('change', c_s);
+            document.getElementById('bl_a').addEventListener('change', c_s);
+
+            document.getElementById('s').addEventListener('input', c_s);
+            document.getElementById('b').addEventListener('input', c_s);
+        }
+        function get_n() {
+            s1 = s1_i.value; s2 = s2_i.value; s3 = s3_i.value; s4 = s4_i.value; s5 = s5_i.value; s6 = s6_i.value;
+            b1 = b1_i.value; b2 = b2_i.value; b3 = b3_i.value; b4 = b4_i.value; b5 = b5_i.value; b6 = b6_i.value;
+
+            s_l = document.getElementById("s").value;
+            b_l = document.getElementById("b").value;
+            s_n = Number(s1) + Number(s2) + Number(s3) + Number(s4) + Number(s5) + Number(s6);
+            b_n = Number(b1) + Number(b2) + Number(b3) + Number(b4) + Number(b5) + Number(b6);
+        }
+        function c_s() {
+            get_n();
+            s_f = document.getElementById('f' + s_l).innerText.trim();
+            s_y = document.getElementById('y' + s_l).innerText.trim();
+            b_f = document.getElementById('f' + b_l).innerText.trim();
+            b_y = document.getElementById('y' + b_l).innerText.trim();
+            s_m = document.getElementById('sm').value;
+            b_m = document.getElementById('bm').value;
+            s_v = s_f;
+            b_v = b_y * ((b_m * 0.01) + 1)
+            bl_a = document.getElementById('bl_a').value;
+            if (csm_v) {
+                s_v = s_y * ((s_m * 0.01) + 1)
+            }
+
+            if (ob_v) {
+                b_v_all = b_v * b_n;
+                s_v_all = s_v;
+
+                bl = (b_v / s_v) * (Number(bl_a) + 1);
+                num = bl * b_n;
+            } else {
+                b_v_all = b_v;
+                s_v_all = s_v * s_n;
+
+                bl = (s_v / b_v) * (Number(bl_a) + 1);
+                num = bl * s_n;
+            }
+
+            document.getElementById('num').innerHTML = num;
+            document.getElementById('bl').innerHTML = bl;
+
+            var s_t = '' + s_m + '%r' + s_l + '🟡' + s1 + '🟣' + s2 + '🔴' + s3 + '🔵' + s4 + '🟢' + s5 + '🟤' + s6 + ';';
+            var b_t = '' + b_m + '%r' + b_l + '🟡' + b1 + '🟣' + b2 + '🔴' + b3 + '🔵' + b4 + '🟢' + b5 + '🟤' + b6 + ';';
+
+            s_t = s_t + "<br/>" + f_t + ' : ' + s_f * s_n + "(" + s_f + "*" + s_n + ")";
+            s_t = s_t + "<br/>" + y_t + ' : ' + s_y * s_n * ((s_m * 0.01) + 1) + "((" + s_y + "+" + s_y * (s_m * 0.01) + ")*" + s_n + ")";
+
+            b_t = b_t + "<br/>" + f_t + ' : ' + b_f * b_n + "(" + b_f + "*" + b_n + ")";
+            b_t = b_t + "<br/>" + y_t + ' : ' + b_y * b_n * ((b_m * 0.01) + 1) + "((" + b_y + "+" + b_y * (b_m * 0.01) + ")*" + b_n + ")";
+            document.getElementById("st").innerHTML = s_t;
+            document.getElementById("bt").innerHTML = b_t;
+        }
+
+        var csm_input = document.getElementById('csm');
+        var csm_v = false;
+        csm_input.addEventListener('change', function () {
+            csm_v = csm_input.checked;
+            c_s();
+        });
+
+        var ob_input = document.getElementById('ob');
+        var ob_v = false;
+        ob_input.addEventListener('change', function () {
+            ob_v = ob_input.checked;
+            c_s();
+        });
+        function s_e() {
+            var t_i = '';
+            if (onAndroid) {
+                t_i = prompt("js/:title=" + s_t_ + "/:mes=" + s_t_, document.getElementById("st").innerText.trim())
+            } else {
+                t_i = prompt(s_t_, document.getElementById("st").innerText.trim())
+            }
+
+            s_m = t_i.substring(0, t_i.indexOf('%r'))
+            s_l = t_i.substring(t_i.indexOf('%r') + 2, t_i.indexOf('🟡'))
+            s1 = t_i.substring(t_i.indexOf('🟡') + 2, t_i.indexOf('🟣'))
+            s2 = t_i.substring(t_i.indexOf('🟣') + 2, t_i.indexOf('🔴'))
+            s3 = t_i.substring(t_i.indexOf('🔴') + 2, t_i.indexOf('🔵'))
+            s4 = t_i.substring(t_i.indexOf('🔵') + 2, t_i.indexOf('🟢'))
+            s5 = t_i.substring(t_i.indexOf('🟢') + 2, t_i.indexOf('🟤'))
+            s6 = t_i.substring(t_i.indexOf('🟤') + 2, t_i.indexOf(';'))
+
+            s1_i.value = s1;
+            s2_i.value = s2;
+            s3_i.value = s3;
+            s4_i.value = s4;
+            s5_i.value = s5;
+            s6_i.value = s6;
+            document.getElementById('sm').value = s_m
+            document.getElementById('s').value = s_l
+            c_s()
+        }
+        function b_e() {
+            var t_i = '';
+            if (onAndroid) {
+                t_i = prompt("js/:title=" + b_t_ + "/:mes=" + b_t_, document.getElementById("bt").innerText.trim())
+            } else {
+                t_i = prompt(b_t_, document.getElementById("bt").innerText.trim())
+            }
+            //0%r9🟡0🟣0🔴0🔵0🟢0🟤0
+            b_m = t_i.substring(0, t_i.indexOf('%r'))
+            b_l = t_i.substring(t_i.indexOf('%r') + 2, t_i.indexOf('🟡'))
+            b1 = t_i.substring(t_i.indexOf('🟡') + 2, t_i.indexOf('🟣'))
+            b2 = t_i.substring(t_i.indexOf('🟣') + 2, t_i.indexOf('🔴'))
+            b3 = t_i.substring(t_i.indexOf('🔴') + 2, t_i.indexOf('🔵'))
+            b4 = t_i.substring(t_i.indexOf('🔵') + 2, t_i.indexOf('🟢'))
+            b5 = t_i.substring(t_i.indexOf('🟢') + 2, t_i.indexOf('🟤'))
+            b6 = t_i.substring(t_i.indexOf('🟤') + 2, t_i.indexOf(';'))
+
+            b1_i.value = b1;
+            b2_i.value = b2;
+            b3_i.value = b3;
+            b4_i.value = b4;
+            b5_i.value = b5;
+            b6_i.value = b6;
+            document.getElementById('bm').value = b_m
+            document.getElementById('b').value = b_l
+            c_s()
+        }
+    </script>
+
+
+
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+</body>
+
+</html>
