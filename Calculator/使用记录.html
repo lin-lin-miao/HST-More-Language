@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>使用记录</title>
+</head>
+
+<body style="background-color:hsl(0, 0%, 90%,0.2);">
+    <pre id="st">喵喵喵</pre>
+</body>
+<script type="text/javascript">
+
+    function show() {
+        jo = JSON.parse(data)
+        s = prompt("js/:api=i18n/:msg=切换总数")+"\t:\t" + jo["切换总数"] + "\n\n"
+        keys = Object.keys(jo);
+        for (var i = 0; i < keys.length; i++) {
+            s += keys[i] + "\t:\t" + jo[keys[i]] + "\n"
+        }
+        document.getElementById("st").innerHTML = s;
+    }
+
+    data = prompt("js/:api=getChangeCounter")
+    if (data.indexOf('noCanTrust') != -1) {
+        data += "/:"
+        p = data.substring(data.indexOf('noCanTrust=') + 'noCanTrust='.length);
+        p = p.substring(0, p.indexOf('/:'));
+        document.getElementById("st").innerHTML = "没有 " + p + " 权限";
+        if (prompt("js/:api=CanTrust/:msg=" + p) == "1") {
+            data = prompt("js/:api=getChangeCounter")
+            show();
+        }
+    } else {
+        show();
+    }
+
+</script>
+
+</html>

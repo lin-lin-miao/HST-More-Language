@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<button id="tc" type="button" onclick="tc()">退出</button>
+<button id="SSU" type="button" onclick="SSU()">自启</button>
+<button id="usec" type="button" onclick="usec()">使用情况</button>
+<p id="st">喵喵喵</p>
+</body>
+
+<script type="text/javascript">
+    var is = prompt("js/:api=inStartStartup");
+
+    if (prompt("js/:api=isStartStartup") == "1") {
+        android.Toast("此脚本已自启启动喵");
+    }
+    var data = prompt("js/:api=readData/:path=测试")
+    if (data == "") {
+        data = "1"
+    } else {
+        i = parseInt(data) + 1;
+        data = i.toString();
+    }
+    android.Toast("此脚本已启动" + data + "次喵");
+    prompt("js/:api=writeData/:path=测试/:data=" + data)
+    if (prompt("js/:api=isStartStartup") == "1") {
+        prompt("js/:api=exit");
+    }
+    
+    function tc() {
+        prompt("js/:api=exit");
+    }
+    function SSU() {
+        if (is == "0") {
+            prompt("js/:api=StartStartup/:msg=自启动测试");
+        }else{
+            android.Toast("此脚本已自启启动喵");
+        }
+    }
+    function usec() {
+
+        data = prompt("js/:api=getChangeCounter")
+        if (data.indexOf('noCanTrust')!=-1) {
+            data += "/:"
+            p = data.substring(data.indexOf('noCanTrust=') + 'noCanTrust='.length);
+            p = p.substring(0, p.indexOf('/:'));
+            document.getElementById("st").innerHTML = "没有 " + p + " 权限";
+            prompt("js/:api=CanTrust/:msg=" + p)
+        } else {
+            jo = JSON.parse(data)
+            s = "切换总数:\t"+jo["切换总数"]+"\n\n"
+            keys = Object.keys(jo);
+            for (var i = 0; i < keys.length; i++) {
+                s += keys[i]+":\t"+jo[keys[i]]+"\n"
+            }
+            document.getElementById("st").innerHTML = s;
+        }
+
+    }
+</script>
+
+</html>

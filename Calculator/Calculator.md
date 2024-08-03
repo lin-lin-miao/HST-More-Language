@@ -51,9 +51,11 @@ permission 可设置的函数
 prompt("js/:api=i18n/:mes=计算器")
 ```
 
-api值为需要调用的函数名，
+api值为需要调用的函数名
 
 若无api值则为自定义输入框
+
+部分api需要权限
 
 调用值可乱序
 
@@ -61,8 +63,32 @@ api值为需要调用的函数名，
 
 |函数名|所需参数|返回|结果|
 |--|--|--|--|
-|i18n|mes=String|String|使用app加载的翻译文件进行翻译|
+|i18n|msg=String|String|使用app加载的翻译文件进行翻译|
 |name|null|String|返回插件名称|
 |version|null|String|返回app版本|
 |path|null|URI|插件所在目录|
-|open|mes=Url|boolean|需用户同意的直接打开Url,true为同意,false为失败|
+|open|msg=Url|boolean|需用户同意的直接打开Url,true为同意,false为失败|
+|StartStartup|msg=String|String(0/1)|设置为app启动时运行|
+|isStartStartup|null|String(0/1)|是否为app启动时运行|
+|inStartStartup|null|String(0/1)|是否在app启动时运行|
+|exit|null|null|退出|
+|CanTrust|msg=String|String(0/1)|设置为msg中包含的权限|
+|getCanTrust|null|String|返回权限字符串|
+|readData|path=String|String|返回保存的字符串|
+|writeData|path=String|String(0/1)|保存的字符串|
+|getChangeCounter|null|String(JSON)|获取使用情况,返回JSON字符串,权限UsageSituation|
+
+#### api权限
+
+获取权限
+
+```javascript
+prompt("js/:api=CanTrust/:msg=权限字符串")
+```
+
+调用api时将判断 权限字符串 中是否包含所需的权限字符
+
+若无权限将返回String 
+```
+    android/:api=(调用API)/:noCanTrust=(缺失的权限字符串)
+```

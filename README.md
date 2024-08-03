@@ -27,7 +27,7 @@
     - (其它翻译文件)
   - Calculator(插件文件夹)
   - rubbish
-  - XP(外置版临时文件夹)
+  - XP(临时数据文件夹)
 
 ## 如何使用计算器插件
 
@@ -48,5 +48,10 @@
 ## 应用使用说明
 
 [Hades-StarTool](https://github.com/lin-lin-miao/HST-More-Language/blob/main/HST/ZH.md)
+
+- 运行模式:
+  - data授权模式:默认运行模式,完整的功能,安卓11以上需要有data目录授权
+  - Shizuku模式:依赖Shizuku,不需要data目录授权,部分即时性功能可能无法运行
+  - 外置版模式:通过安装经过修补的外置版Hadesstar,HST将通过相互调用的方式进行数据传输,不需要data目录授权
 
 ## 喵~
