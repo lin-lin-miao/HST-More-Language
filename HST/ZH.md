@@ -27,8 +27,8 @@ Hades'StarTool是专为Hades'Star开发的辅助工具，可以帮助你更快�
 ## 更新日志
 
 - 更新日志:1.3.11
-  1.支持Shizuku\n
-  2.重构data目录授权\n
+  1.支持Shizuku
+  2.重构data目录授权
   3.增加更多JS插件api
 
 - 更新日志:1.3.10.1
