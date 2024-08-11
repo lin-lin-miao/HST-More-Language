@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>神器记录器</title>
+    <style>
+        /*--预设--*/
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #lyrow,
+        #lyrow input,
+        #lyrow textarea {
+            font-size: 12px;
+            font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu;
+        }
+
+        #lyrow {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #lyrow div {
+            min-height: 18px;
+        }
+
+        #lyrow input,
+        #lyrow textarea {
+            border: rgb(235, 235, 235) 1px solid;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: 0;
+        }
+
+        #lyrow input:hover,
+        #lyrow textarea:hover {
+            border: 1px solid #6bc1f2;
+        }
+
+        /*--编辑--*/
+        /* #lyrow .list {} */
+
+        #lyrow .listbox {
+            padding: 5px 5px 5px 5px;
+            margin: 8px 5px 8px 5px;
+            border: rgba(0, 0, 0, 1) solid 1px;
+            border-radius: 3px 3px 3px 3px;
+            width: 95%;
+            max-width: 95%;
+        }
+
+        #lyrow .in_add {
+            margin: 5px 8px 5px 8px;
+        }
+
+        #lyrow .title {
+            text-align: left;
+            vertical-align: super;
+            font-weight: bold;
+        }
+
+        #lyrow .in_amount {
+            border: rgba(0, 0, 0, 1) solid 1px;
+        }
+
+        #lyrow .in_delete {
+            margin: 0 0 0 50px;
+        }
+
+        #lyrow .bt_up {
+            min-width: 25px;
+            margin: 0 10px 0 10px;
+        }
+
+        #lyrow .menu {
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0.8);
+            top: 1px;
+            z-index: 999;
+        }
+
+        #lyrow .fill {
+            margin: 100px 0 0 0;
+        }
+    </style>
+</head>
+
+<body style="background-color:hsl(0, 0%, 90%,0.7);">
+    <div id="lyrow">
+        <div id="menu" class="listbox menu">
+            <div>
+                <span class="title">神器记录器</span>
+            </div>
+            <div>
+                <span class="in_add">记录名</span>
+                <input id="filePath" type="text" name="input" class="in_add in_amount" placeholder="记录名" value="新建记录">
+                <!-- <input type="button" name="button" value="读取" class="in_add bt_up"> -->
+                <button id="b_read" type="button" onclick="b_read()" class="in_add bt_up">读取</button>
+                <!-- <input type="button" name="button" value="保存" class="in_add bt_up"> -->
+                <button id="b_save" type="button" onclick="b_save()" class="in_add bt_up">保存</button>
+            </div>
+            <div>
+                <button id="b_add" type="button" onclick="b_add()" class="in_add bt_up">添加</button>
+                <select id="defR" title="默认神器等级" name="select" class="in_add">
+                    <option value="1">r1</option>
+                    <option value="2">r2</option>
+                    <option value="3">r3</option>
+                    <option value="4">r4</option>
+                    <option value="5">r5</option>
+                    <option value="6">r6</option>
+                    <option value="7">r7</option>
+                    <option value="8">r8</option>
+                    <option value="9">r9</option>
+                    <option value="10">r10</option>
+                    <option value="11">r11</option>
+                    <option value="12">r12</option>
+                </select>
+                <select id="defC" title="默认神器颜色" name="select" class="in_add">
+                    <option value="1">黄🟡</option>
+                    <option value="2">紫🟣</option>
+                    <option value="3">红🔴</option>
+                    <option value="4">蓝🔵</option>
+                    <option value="5">绿🟢</option>
+                    <option value="6">棕🟤</option>
+                </select>
+                <button id="b_export" type="button" onclick="b_export()" class="in_add bt_up">导出</button>
+                <button id="b_import" type="button" onclick="b_import()" class="in_add bt_up">导入</button>
+            </div>
+        </div>
+        <div id="fill" class="fill"> </div>
+        <div id="list" class="list">
+            <div class="listbox">
+                <div class="box">
+                    <input type="number" name="input" class="in_add in_amount" placeholder="加成" value="0">
+                    <span class="in_add">%</span>
+                    <select title="神器等级" name="select" class="in_add">
+                        <option value="1">r1</option>
+                        <option value="2">r2</option>
+                        <option value="3">r3</option>
+                        <option value="4">r4</option>
+                        <option value="5">r5</option>
+                        <option value="6">r6</option>
+                        <option value="7">r7</option>
+                        <option value="8">r8</option>
+                        <option value="9">r9</option>
+                        <option value="10">r10</option>
+                        <option value="11">r11</option>
+                        <option value="12">r12</option>
+                    </select>
+                    <select title="神器颜色" name="select" class="in_add">
+                        <option value="1">黄🟡</option>
+                        <option value="2">紫🟣</option>
+                        <option value="3">红🔴</option>
+                        <option value="4">蓝🔵</option>
+                        <option value="5">绿🟢</option>
+                        <option value="6">棕🟤</option>
+                    </select>
+                    <input id="in_amount" type="number" name="input" class="in_add in_amount" placeholder="数量"
+                        value="1">
+                    <button id="b_up" type="button" onclick="b_up(this)" class="in_add bt_up">+</button>
+                    <button id="b_down" type="button" onclick="b_down(this)" class="in_add bt_up">-</button>
+                    <button id="b_delete" type="button" onclick="b_delete(this)"
+                        class="in_add in_delete bt_up">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // 插件判断
+        var onAndroid = false
+        try {
+            onAndroid = JSON.stringify(android) === '{}'
+        } catch (error) {
+            console.error(error);
+        }
+
+        // 标题菜单边距
+        var topHeight = document.getElementById('menu').offsetHeight
+        document.getElementById('fill').style.marginTop = topHeight + 'px'
+
+        var list = document.getElementById('list')
+        var defR = 1
+        var defC = 1
+        var defRS = document.getElementById('defR')
+        var defCS = document.getElementById('defC')
+        var pathIn = document.getElementById('filePath')
+        
+        if (onAndroid) {
+            path = prompt("js/:api=readData/:path=info")
+            pathIn.value=path
+            b_read()
+            // _import(s)
+        }
+
+        function b_read() {
+            path = pathIn.value
+            if (onAndroid) {
+                s = prompt("js/:api=readData/:path=" + path + ".txt")
+                _import(s)
+                android.Toast("读取成功喵");
+            } else {
+                alert('仅作插件时可读取喵')
+            }
+        }
+
+        function b_save() {
+            if (onAndroid) {
+                save()
+                android.Toast("保存成功喵");
+            } else {
+                alert('仅作插件时可保存喵')
+            }
+        }
+
+        function save() {
+            s = _export()
+            path = pathIn.value
+            if (onAndroid) {
+                prompt("js/:api=writeData/:path=info/:data=" + path)
+                prompt("js/:api=writeData/:path=" + path + ".txt/:data=" + s)
+            }
+        }
+
+        function ctoi(c) {
+            c = c.split('')
+            if (intersection(c, '黄🟡').length > 1) return 1
+            if (intersection(c, '紫🟣').length > 1) return 2
+            if (intersection(c, '红🔴').length > 1) return 3
+            if (intersection(c, '蓝🔵').length > 1) return 4
+            if (intersection(c, '绿🟢').length > 1) return 5
+            if (intersection(c, '棕🟤').length > 1) return 6
+            return 1
+        }
+
+        function intersection(c, s) {
+            return c.filter((val) => new Set(s.split('')).has(val))
+        }
+
+        function trim(str) {
+            reg = /[\t\r\f\n\s]*/g;
+            if (typeof str === 'string') {
+                trimStr = str.replace(reg, '');
+                return trimStr
+            }
+        }
+
+        function _import(data) {
+            jobj = new Array();
+            data = trim(data) + ';'
+            s = data
+            while (data != '') {
+                it = data.substring(0, data.indexOf(';') + 1)
+                // it = getData(it);
+                it = it.match(/^\S*?([0-9]+)\S*?%\S*?[R|r]\S*?([0-9]+)(\S*)[X|x]\S*?([0-9]+)\S*?[;|；]\S*?$/)
+                if (it != null) {
+                    jobj.push([parseInt(it[1]), parseInt(it[2]), ctoi(it[3]), parseInt(it[4])])
+                }
+                data = data.substring(data.indexOf(';') + 1)
+            }
+            if (jobj.length > 0) {
+                list.innerHTML = ''
+                console.log('导入成功')
+                defR = parseInt(jobj[0][1])
+                defC = parseInt(jobj[0][2])
+                console.log(defR+":"+defC)
+                defRS.options[defR-1].selected = true
+                defCS.options[defC-1].selected = true
+            }
+            for (let index = 0; index < jobj.length; index++) {
+                item = jobj[index];
+                ListItem = addListItem(item[0], item[1], item[2], item[3])
+                list.appendChild(ListItem)
+            }
+        }
+
+        function b_import() {
+            data = ''
+            if (onAndroid) {
+                data = prompt("js/:title=" + '导入信息' + "/:mes="+'')
+            } else {
+                data = prompt()
+            }
+            _import(data)
+            if (onAndroid) {
+                    save()
+            }
+        }
+
+        function itoc(i) {
+            switch (parseInt(i)) {
+                case 1:
+                    return '黄🟡'
+                case 2:
+                    return '紫🟣'
+                case 3:
+                    return '红🔴'
+                case 4:
+                    return '蓝🔵'
+                case 5:
+                    return '绿🟢'
+                case 6:
+                    return '棕🟤'
+                default:
+                    return '黄🟡'
+            }
+        }
+
+        function _export() {
+            listitem = list.children
+            jobj = new Array();
+            for (let index = 0; index < listitem.length; index++) {
+                item = listitem[index];
+                it = item.children[0].children;
+                a = it[0].value;
+                r = it[2].value;
+                c = it[3].value;
+                n = it[4].value;
+                jobj.push([a, r, c, n]);
+            }
+            s = ''
+            for (let index = 0; index < jobj.length; index++) {
+                item = jobj[index];
+                s += item[0] + "%R" + item[1] + itoc(item[2]) + 'X' + item[3] + ';\n'
+            }
+            s += '-HST'
+            // console.log(s)
+            return s
+        }
+
+        function b_export() {
+            s = _export()
+            if (onAndroid) {
+                save()
+                t_i = prompt("js/:title=" + '记录信息' + "/:mes=" + '', s)
+            } else {
+                t_i = prompt(s, s)
+            }
+        }
+
+        function b_add() {
+            list.appendChild(addListItem(0, defRS.value, defCS.value, 1))
+            window.scrollTo({
+                top: list.offsetHeight - topHeight,
+                behavior: "smooth"
+            })
+            save()
+        }
+
+        function addListItem(a, r, c, n) {
+            item = document.createElement("div");
+            r = r - 1;
+            c = c - 1;
+            item.className = "listbox";
+            item.innerHTML =
+                '<div class="box">' + '\n' +
+                '<input type="number" name="input" class="in_add in_amount" placeholder="加成" value="' + a + '">' + '\n' +
+                '<span class="in_add">%</span>' + '\n' +
+                '<select title="神器等级" name="select" class="in_add">' + '\n' +
+                '<option value="1">r1</option>' + '\n' +
+                '<option value="2">r2</option>' + '\n' +
+                '<option value="3">r3</option>' + '\n' +
+                '<option value="4">r4</option>' + '\n' +
+                '<option value="5">r5</option>' + '\n' +
+                '<option value="6">r6</option>' + '\n' +
+                '<option value="7">r7</option>' + '\n' +
+                '<option value="8">r8</option>' + '\n' +
+                '<option value="9">r9</option>' + '\n' +
+                '<option value="10">r10</option>' + '\n' +
+                '<option value="11">r11</option>' + '\n' +
+                '<option value="12">r12</option>' + '\n' +
+                '</select>' + '\n' +
+                '<select  title="神器颜色" name="select" class="in_add">' + '\n' +
+                '<option value="1">黄🟡</option>' + '\n' +
+                '<option value="2">紫🟣</option>' + '\n' +
+                '<option value="3">红🔴</option>' + '\n' +
+                '<option value="4">蓝🔵</option>' + '\n' +
+                '<option value="5">绿🟢</option>' + '\n' +
+                '<option value="6">棕🟤</option>' + '\n' +
+                '</select>' + '\n' +
+                '<input id="in_amount" type="number" name="input" class="in_add in_amount" placeholder="数量" value="' + n + '">' + '\n' +
+                '<button id="b_up" type="button" onclick="b_up(this)" class="in_add bt_up">+</button>' + '\n' +
+                '<button id="b_down" type="button" onclick="b_down(this)" class="in_add bt_up">-</button>' + '\n' +
+                '<button id="b_delete" type="button" onclick="b_delete(this)" class="in_add in_delete bt_up">删除</button>' + '\n' +
+                '</div>';
+            item.children[0].children[2].options[r].selected = true
+            item.children[0].children[3].options[c].selected = true
+            return item;
+        }
+
+        // 列表按钮
+        function b_up(btn) {
+            in_amount = btn.parentElement.children[4];
+            v = parseInt(in_amount.value) + 1;
+            in_amount.value = v;
+            save()
+        }
+        function b_down(btn) {
+            in_amount = btn.parentElement.children[4];
+            v = parseInt(in_amount.value) - 1;
+            if (v < 0) { v = 0 }
+            in_amount.value = v;
+            save()
+        }
+        function b_delete(btn) {
+            listbox = btn.parentElement.parentElement
+            list.removeChild(listbox)
+            save()
+        }
+    </script>
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+</body>
+
+</html>
