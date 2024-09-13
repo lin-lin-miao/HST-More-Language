@@ -22,28 +22,49 @@ Hades'StarTool是专为Hades'Star开发的辅助工具，可以帮助你更快�
 
 ##  使用说明
 
-暂无
+[【Hades`StarTool(换号器)食用说明】(旧版)](https://www.bilibili.com/video/BV1Yg41147Hm/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 
+[【～外置存储HS换号器食用教程～】](https://www.bilibili.com/video/BV14Z421p7cY/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 ## 更新日志
 
 - 更新日志:1.3.11
+
   1.支持Shizuku
+
   2.重构data目录授权
+
+  3.增加更多JS插件api
+
+- 更新日志:1.3.11
+
+  1.支持Shizuku
+
+  2.重构data目录授权
+
   3.增加更多JS插件api
 
 - 更新日志:1.3.10.1
+
   1.修复外置版返回白屏
 
 - 更新日志:1.3.10
+
   1.重构内置模块
+
   2.外置版不再需要权限(外置版请到Q群下载)
+
   3.优化运行逻辑,运行速度+1
 
 - 更新日志:1.3.9
+
   1.内置XP模块
+
   2.简化名称为HST
+
   3.内置神器计算器
+
   4.修复外部目录权限问题
+
   5.防止背景导致的崩溃
 
 - 更新日志:1.3.8.2
