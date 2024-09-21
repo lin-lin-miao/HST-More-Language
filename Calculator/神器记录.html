@@ -188,10 +188,10 @@
         var defRS = document.getElementById('defR')
         var defCS = document.getElementById('defC')
         var pathIn = document.getElementById('filePath')
-        
+
         if (onAndroid) {
             path = prompt("js/:api=readData/:path=info")
-            pathIn.value=path
+            pathIn.value = path
             b_read()
             // _import(s)
         }
@@ -214,6 +214,11 @@
             } else {
                 alert('仅作插件时可保存喵')
             }
+        }
+
+        function ExitCall() {
+            alert("Android中调用JS方法成功");
+            save()
         }
 
         function save() {
@@ -266,9 +271,9 @@
                 console.log('导入成功')
                 defR = parseInt(jobj[0][1])
                 defC = parseInt(jobj[0][2])
-                console.log(defR+":"+defC)
-                defRS.options[defR-1].selected = true
-                defCS.options[defC-1].selected = true
+                console.log(defR + ":" + defC)
+                defRS.options[defR - 1].selected = true
+                defCS.options[defC - 1].selected = true
             }
             for (let index = 0; index < jobj.length; index++) {
                 item = jobj[index];
@@ -280,13 +285,13 @@
         function b_import() {
             data = ''
             if (onAndroid) {
-                data = prompt("js/:title=" + '导入信息' + "/:mes="+'')
+                data = prompt("js/:title=" + '导入信息' + "/:mes=" + '')
             } else {
                 data = prompt()
             }
             _import(data)
             if (onAndroid) {
-                    save()
+                save()
             }
         }
 

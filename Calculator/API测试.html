@@ -10,6 +10,7 @@
 <button id="tc" type="button" onclick="tc()">退出</button>
 <button id="SSU" type="button" onclick="SSU()">自启</button>
 <button id="usec" type="button" onclick="usec()">使用情况</button>
+<button id="usec" type="button" onclick="tc2()">完全退出</button>
 <p id="st">喵喵喵</p>
 </body>
 
@@ -19,6 +20,7 @@
     if (prompt("js/:api=isStartStartup") == "1") {
         android.Toast("此脚本已自启启动喵");
     }
+
     var data = prompt("js/:api=readData/:path=测试")
     if (data == "") {
         data = "1"
@@ -27,11 +29,14 @@
         data = i.toString();
     }
     android.Toast("此脚本已启动" + data + "次喵");
-    prompt("js/:api=writeData/:path=测试//www/:data=" + data)
+    prompt("js/:api=writeData/:path=测试/:data=" + data)
     if (prompt("js/:api=isStartStartup") == "1") {
         prompt("js/:api=exit");
     }
     
+    function tc2() {
+        prompt("js/:api=exitALL");
+    }
     function tc() {
         prompt("js/:api=exit");
     }

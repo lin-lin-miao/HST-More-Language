@@ -77,6 +77,11 @@ api值为需要调用的函数名
 |readData|path=String|String|返回保存的字符串|
 |writeData|path=String|String(0/1)|保存的字符串|
 |getChangeCounter|null|String(JSON)|获取使用情况,返回JSON字符串,权限UsageSituation|
+|up_accountList|null|String(0/1)|列表返回上层,权限UsageSituation|
+|set_accountList|path=String|String(0/1)|进入子目录,权限UsageSituation|
+|getAccountDir|null|String(JSON)|获取当前目录列表,权限UsageSituation|
+|getAccount|null|String(JSON)|获取当前账号列表,权限UsageSituation|
+|change_account|path=String|String(0/1)|切换列表中账号,权限UsageSituation|
 
 #### api权限
 

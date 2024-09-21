@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>API测试</title>
+    <style>
+        /*--预设--*/
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #lyrow,
+        #lyrow input,
+        #lyrow textarea {
+            font-size: 12px;
+            font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu;
+        }
+
+        #lyrow {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #lyrow div {
+            min-height: 18px;
+        }
+
+        #lyrow input,
+        #lyrow textarea {
+            border: rgb(235, 235, 235) 1px solid;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: 0;
+        }
+
+        #lyrow input:hover,
+        #lyrow textarea:hover {
+            border: 1px solid #6bc1f2;
+        }
+
+        /*--编辑--*/
+        #lyrow .list {}
+
+        #lyrow .listbox {
+            padding: 5px 5px 5px 5px;
+            margin: 8px 5px 8px 5px;
+            border: rgba(0, 0, 0, 1) solid 1px;
+            border-radius: 3px 3px 3px 3px;
+            width: 95%;
+            max-width: 95%;
+        }
+
+        #lyrow .in_add {
+            margin: 5px 8px 5px 8px;
+        }
+
+        #lyrow .title {
+            text-align: left;
+            vertical-align: super;
+            font-weight: bold;
+        }
+
+        #lyrow .in_amount {
+            border: rgba(0, 0, 0, 1) solid 1px;
+        }
+
+        #lyrow .in_delete {
+            margin: 0 0 0 50px;
+        }
+
+        #lyrow .bt_up {
+            min-width: 25px;
+            margin: 0 10px 0 10px;
+        }
+
+        #lyrow .menu {
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0.8);
+            top: 1px;
+            z-index: 999;
+        }
+
+        #lyrow .fill {
+            margin: 100px 0 0 0;
+        }
+
+        #lyrow .name_tag {
+            margin: 0 0 0 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="background-color:hsl(0, 0%, 90%,0.7);">
+    <div id="lyrow">
+        <div class="listbox menu">
+            <div>
+                <span class="title">API测试</span>
+            </div>
+            <div>
+                <input type="button" name="button" value="退出" class="in_add bt_up" onclick="tc()">
+                <input type="button" name="button" value="自启" class="in_add bt_up" onclick="SSU()">
+                <input type="button" name="button" value="导入" class="in_add bt_up">
+            </div>
+        </div>
+        <div class="fill"> </div>
+        <div class="list" id="list">
+            <div class="listbox">
+                <div onclick="up_accountList()">
+                    <span> </span>
+                    <span class="name_tag">上一层</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button id="tc" type="button" onclick="tc()">退出</button>
+<button id="SSU" type="button" onclick="SSU()">自启</button>
+<button id="usec" type="button" onclick="usec()">使用情况</button>
+<button id="usec" type="button" onclick="tc2()">完全退出</button> -->
+    <!-- <p id="st">喵喵喵</p> -->
+</body>
+
+<script type="text/javascript">
+    var onAndroid = false
+    try {
+        onAndroid = JSON.stringify(android) === '{}'
+    } catch (error) {
+        console.error(error);
+    }
+
+    // if (prompt("js/:api=isStartStartup") == "1") {
+    //     android.Toast("此脚本已自启启动喵");
+    // }
+    var list = document.getElementById('list')
+    if (onAndroid) {
+        data = prompt("js/:api=readData/:path=测试")
+        if (data == "") {
+            data = "1"
+        } else {
+            i = parseInt(data) + 1;
+            data = i.toString();
+        }
+        android.Toast("此脚本已启动" + data + "次喵");
+        prompt("js/:api=writeData/:path=测试/:data=" + data)
+    }
+
+    function tc2() {
+        prompt("js/:api=exitALL");
+    }
+    function tc() {
+        prompt("js/:api=exit");
+    }
+    function SSU() {
+        is = prompt("js/:api=inStartStartup");
+        if (is == "0") {
+            prompt("js/:api=StartStartup/:msg=自启动测试");
+        } else {
+            android.Toast("此脚本已自启启动喵");
+        }
+    }
+
+    function chack(data) {
+        // data = prompt("js/:api=getChangeCounter")
+        if (data.indexOf('noCanTrust') != -1) {
+            data += "/:"
+            p = data.substring(data.indexOf('noCanTrust=') + 'noCanTrust='.length);
+            p = p.substring(0, p.indexOf('/:'));
+            document.getElementById("st").innerHTML = "没有 " + p + " 权限";
+            ct = prompt("js/:api=getCanTrust")
+            prompt("js/:api=CanTrust/:msg=" + ct + p)
+            return false
+        } else {
+            return data
+        }
+    }
+
+    function up_accountList() {
+        data = prompt("js/:api=getCanTrust")
+        if (data.indexOf('UsageAccountList') == -1) {
+            prompt("js/:api=CanTrust/:msg=" + data + 'UsageAccountList')
+            return
+        }
+        data = prompt("js/:api=up_accountList")
+        if (data == "0") {
+            return
+        }
+        upData()
+    }
+
+    function upData() {
+        if(onAndroid){
+            data = prompt("js/:api=getCanTrust")
+            if (data.indexOf('UsageAccountList') == -1) {
+                prompt("js/:api=CanTrust/:msg=" + data + 'UsageAccountList')
+                return
+            }
+        }
+        
+        if(!onAndroid){
+            joDir = JSON.parse('[asa,bbb,ccc,ddd,eee,666]')
+            joAc = JSON.parse('["a","b","c","d","e","f"]')
+        }else{
+            data = prompt("js/:api=getAccountDir")
+            joDir = JSON.parse(data)
+            data = prompt("js/:api=getAccount")
+            joAc = JSON.parse(data)
+        }
+        list.innerHTML = '<div class="listbox">' + '\n' +
+            '<div onclick="up_accountList()">' + '\n' +
+            '<span> </span>' + '\n' +
+            '<span class="name_tag">上一层</span>' + '\n' +
+            '</div>' + '\n' +
+            '</div>'
+        for (let index = 0; index < joDir.length; index++) {
+            it = joDir[index];
+            list.appendChild(addDirListItem(it))
+        }
+        for (let index = 0; index < joAc.length; index++) {
+            it = joAc[index];
+            list.appendChild(addAcListItem(it))
+        }
+
+    }
+    function addDirListItem(name) {
+        item = document.createElement("div");
+        item.className = "listbox";
+        item.innerHTML = 
+            '<div onclick="set_accountList(\'' + name + '\')">' + '\n' +
+            '<span>-</span>' + '\n' +
+            '<span class="name_tag">'+name+'</span>' + '\n' +
+            '</div>' + '\n'
+        return item
+    }
+    function addAcListItem(name) {
+        item = document.createElement("div");
+        item.className = "listbox";
+
+        item.innerHTML =
+            '<div onclick="change_account(\'' + name + '\')">' + '\n' +
+            '<span> </span>' + '\n' +
+            '<span class="name_tag">'+name+'</span>' + '\n' +
+            '</div>' + '\n'
+        return item
+    }
+
+    function set_accountList(name) {
+        p = prompt("js/:api=set_accountList/:path=" + name)
+        if (p == 0) return
+        upData()
+    }
+    function change_account(name) {
+        prompt("js/:api=change_account/:path=" + name)
+    }
+    upData()
+</script>
+
+</html>
