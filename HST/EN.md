@@ -28,19 +28,19 @@ Fully offline operation, no network permission requested.
 ## Release Notes
 - Release Version: 1.3.12
 
- 	1.Prevent crashing when Shizuku unstart
+  1. Prevent crashing when Shizuku unstart
 
- 	2.Support sort by Chinese pin yin
+  2. Support sort by Chinese pin yin
 
- 	3.Add more api for JS addons (basic account list action)
+  3. Add more api for JS addons (basic account list action)
 
 - Release Version: 1.3.11
 
-  1.Support Shizuku
+  1. Support Shizuku
 
-  2.Refactor data authorization
+  2. Refactor data authorization
 
-  3.Add more api for JS addons
+  3. Add more api for JS addons
 
 - Release Version: 1.3.5
   1. Added multilingual support.
