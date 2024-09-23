@@ -6,7 +6,7 @@
 
 ## 语言
 
-[中文](../blob/main/README.md) | [EN](/blob/main/README/EN.md) |
+[中文](.../blob/main/README.md) | [EN](/blob/main/README/EN.md) |
 
 ## 如何使用翻译文件
 
