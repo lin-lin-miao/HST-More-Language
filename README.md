@@ -6,7 +6,7 @@
 
 ## 语言
 
-[中文](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README.md) | [EN](https://github.com/lin-lin-miao/HST-More-Language/blob/main/README/EN.md) |
+[中文](./blob/main/README.md) | [EN](./blob/main/README/EN.md) |
 
 ## 如何使用翻译文件
 
@@ -37,7 +37,7 @@
 
 使用第三方插件需自行辨认安全性，本程序仅提供支持环境
 
-[详细](https://github.com/lin-lin-miao/HST-More-Language/blob/main/Calculator/Calculator.md)
+[详细]( ./blob/main/Calculator/Calculator.md)
 
 ## 添加本地化
 
@@ -49,7 +49,7 @@
 
 ## 应用使用说明
 
-[Hades-StarTool](https://github.com/lin-lin-miao/HST-More-Language/blob/main/HST/ZH.md)
+[Hades-StarTool]( ./blob/main/HST/ZH.md)
 
 - 运行模式:
   - data授权模式:默认运行模式,完整的功能,安卓11以上需要有data目录授权
