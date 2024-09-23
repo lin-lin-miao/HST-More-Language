@@ -19,11 +19,28 @@ Fully offline operation, no network permission requested.
   - Language (translation language files)
   - rubbish (unexpected files)
 
-## Instructions for Use
+## How to Use
 
-Currently unavailable.
+[<i>HST Instructions (old version)</i>](https://www.bilibili.com/video/BV1Yg41147Hm/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
+
+[<i>~ HST for HS_OUT Instructions ~</i>](https://www.bilibili.com/video/BV14Z421p7cY/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 
 ## Release Notes
+- Release Version: 1.3.12
+
+ 	1.Prevent crashing when Shizuku unstart
+
+ 	2.Support sort by Chinese pin yin
+
+ 	3.Add more api for JS addons (basic account list action)
+
+- Release Version: 1.3.11
+
+  1.Support Shizuku
+
+  2.Refactor data authorization
+
+  3.Add more api for JS addons
 
 - Release Version: 1.3.5
   1. Added multilingual support.
