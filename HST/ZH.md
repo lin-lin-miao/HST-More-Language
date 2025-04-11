@@ -26,6 +26,19 @@ Hades'StarTool是专为Hades'Star开发的辅助工具，可以帮助你更快�
 
 [【～外置存储HS换号器食用教程～】](https://www.bilibili.com/video/BV14Z421p7cY/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 ## 更新日志
+
+- 更新日志:1.3.13
+
+ 	1.防止停止游戏时HST闪退
+
+ 	2.优化外置版返回逻辑
+
+ 	3.增加外置版悬浮窗
+
+ 	4.增加外置版目录删除
+
+ 	5.利用漏洞进行安卓14以上授权
+
 - 更新日志:1.3.12
 
  	1.防止Shizuku未启动时闪退
