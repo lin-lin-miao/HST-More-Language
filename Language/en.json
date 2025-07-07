@@ -54,7 +54,7 @@
   "已经到顶了": "On the top",
   "注意!": "Attention!",
   "输入新的名字重命名": "Enter a new name to rename",
-  "输入DELETE将删除(此操作不可返回)": "Enter 'DELETE' to delete(This operation will be PERMANENT)",
+  "输入DELETE将删除(此操作不可返回)": "Enter 'DELETE' to delete(This operation will be PERMANENT)\nEnter twice to force deletion",
   "文件夹不为空,删除失败": "The folder is not empty, deletion failed",
   "已删除": "Deleted",
   "重命名成功": "Renaming successful",
@@ -93,7 +93,7 @@
   "主界面重启后生效": "Effective after restarting the main interface",
   "保存失败": "Save failed",
   "设置": "SETTLING",
-  "计算器": "CALCULATOR",
+  "计算器": "MODULE",
   "更换背景": "CHANGE BACKGROUND",
   "x(自动匹配)": "Auto (Auto Match)",
   "内置": "Built-in",
@@ -165,5 +165,9 @@
   "将获取的权限:": "The permissions to be obtained:",
   "重置设置": "reset settings ",
   "使用记录": "Usage record",
-  "切换总数": "Switches Number"
+  "切换总数": "Switches Number",
+  "赞助功能": "Sponsor Features",
+  "复制": "COPY",
+  "复制成功": "Copy Success",
+  "复制失败": "Copy Fail"
 }

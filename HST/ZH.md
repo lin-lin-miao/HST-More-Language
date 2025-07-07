@@ -27,6 +27,20 @@ Hades'StarTool是专为Hades'Star开发的辅助工具，可以帮助你更快�
 [【～外置存储HS换号器食用教程～】](https://www.bilibili.com/video/BV14Z421p7cY/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 ## 更新日志
 
+- 更新日志:1.3.14
+
+  1.增加赞助功能
+
+  2.(赞助功能)增加自动隐藏浮窗
+
+  3.(赞助功能)增加自动切换账号
+
+  4.增加账号复制与强制删除
+
+  5.计算器更名为插件
+
+  6.优化运行逻辑,修复一些bug
+
 - 更新日志:1.3.13
 
  	1.防止停止游戏时HST闪退
