@@ -27,6 +27,14 @@ Hades'StarTool是专为Hades'Star开发的辅助工具，可以帮助你更快�
 [【～外置存储HS换号器食用教程～】](https://www.bilibili.com/video/BV14Z421p7cY/?share_source=copy_web&vd_source=ce022a5957ae220f7de93c3d9a4dfba2)
 ## 更新日志
 
+- 更新日志:1.3.14.1
+
+  1.修复旋转屏幕时自动退出
+
+  2.优化主页面布局
+
+  3.优化运行逻辑
+
 - 更新日志:1.3.14
 
   1.增加赞助功能
